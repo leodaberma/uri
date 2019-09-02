@@ -1,0 +1,31 @@
+#include<bits/stdc++.h>
+main(){
+	int n,v[10000],i,m,p;
+	scanf("%d",&n);
+	while(n!=0){
+		for(i=0;i<n;i++){
+			scanf("%d",&v[i]);
+			if(i==0){
+				m=v[i];
+				p=i;
+			}
+			else if(v[i]>m){
+				m=v[i];
+				p=i;
+			}
+		}
+		v[p]=0;
+		for(i=0;i<n;i++){
+			if(i==0){
+				m=v[i];
+				p=0;
+			}
+			else if(v[i]>m){
+				m=v[i];
+				p=i;
+			}
+		}
+		printf("%d\n",p+1);
+		scanf("%d",&n);
+	}
+}
